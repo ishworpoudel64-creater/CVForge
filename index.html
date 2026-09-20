@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CVForge – Free CV Builder &amp; Resume Editor</title>
+  <meta name="description" content="Build, customize, preview and download a professional CV completely free. No sign-up. Your data stays in your browser.">
+  <meta name="theme-color" content="#1f3a5f">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Google Fonts: UI fonts + the Inter and Roboto CV fonts. Remove if you want to work fully offline (fallbacks are defined). -->
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#create">Skip to the CV builder</a>
+
+  <!-- ============ HEADER / NAV ============ -->
+  <header class="site-header" id="top">
+    <div class="wrap nav">
+      <a class="logo" href="#top" aria-label="CVForge home">
+        <img src="image.png" width="34" height="34" alt="">
+        <span>CVForge</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navMenu" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="navMenu" class="nav-menu" aria-label="Main">
+        <a href="#top">Home</a>
+        <a href="#create">Create CV</a>
+        <a href="#templates">Templates</a>
+        <a href="#features">Features</a>
+        <a href="about.html">Developers</a>
+        <a href="#help">Help</a>
+        <div class="nav-cta">
+          <a class="btn primary" href="#create" data-act="create">Create My CV</a>
+          <button class="btn ember" type="button" data-act="download" title="Download the CV you are editing as a PDF">Download CV</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <noscript><p class="noscript">CVForge needs JavaScript to run. Please enable it in your browser.</p></noscript>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" aria-labelledby="heroTitle">
+      <div class="hero-bg" aria-hidden="true"><i></i><i></i><i></i></div>
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <h1 id="heroTitle">Create Your Professional CV in Minutes</h1>
+          <p class="lead">Build, customize, preview and download a professional CV completely free.</p>
+          <div class="hero-actions">
+            <a class="btn primary lg" href="#create" data-act="create" id="heroStart">Start Creating</a>
+            <a class="btn lg" href="#templates">View Templates</a>
+          </div>
+          <ul class="ticks" aria-label="Highlights">
+            <li>No account, no watermark</li>
+            <li>Photo and data never leave your device</li>
+            <li>A4 PDF with multi-page support</li>
+          </ul>
+          <p class="restored" id="restoredNote" hidden>Your last CV was restored from this browser.</p>
+        </div>
+
+        <div class="mock" aria-hidden="true">
+          <div class="mock-sheet s3"></div>
+          <div class="mock-sheet s2"></div>
+          <div class="mock-sheet s1">
+            <div class="m-side"><i class="m-av"></i><b></b><b></b><b></b><span></span><b></b><b></b></div>
+            <div class="m-main"><em class="m-name"></em><em class="m-role"></em><span></span><b></b><b></b><b class="w60"></b><span></span><b></b><b></b><b class="w80"></b><b class="w40"></b></div>
+          </div>
+          <div class="m-badge b1">Live A4 preview</div>
+          <div class="m-badge b2">PDF ready</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CV BUILDER ============ -->
+    <section class="builder" id="create" aria-labelledby="builderTitle">
+      <div class="wrap-wide">
+        <div class="builder-bar card" role="toolbar" aria-label="CV builder actions">
+          <div class="bar-title">
+            <h2 id="builderTitle">CV Builder</h2>
+            <span class="save-status" id="saveStatus" role="status" aria-live="polite" data-state="saved">Auto Saved</span>
+          </div>
+          <div class="bar-actions">
+            <button class="btn" type="button" data-act="save" title="Save your CV in this browser">💾 Save</button>
+            <button class="btn" type="button" data-act="preview" title="Open a full-screen preview">👁 Preview</button>
+            <button class="btn ember" type="button" data-act="download" title="Download as an A4 PDF">⬇ Download PDF</button>
+            <button class="btn" type="button" data-act="print" title="Print only the CV">🖨 Print</button>
+            <button class="btn" type="button" data-act="newcv" title="Start again with an empty CV">＋ New CV</button>
+          </div>
+        </div>
+        <p class="privacy">🔒 Your CV data and photo are processed locally in your browser. We do not require an account to create your CV.</p>
+
+        <div class="builder-grid">
+          <!-- ---------- EDITOR ---------- -->
+          <div class="editor-pane" id="editorPane">
+            <section class="card tools" aria-label="CV tools">
+              <div class="tool-row">
+                <button class="btn" type="button" data-act="sample" title="Fill the editor with fictional demo data">Use Sample CV</button>
+                <button class="btn" type="button" data-act="undo" id="undoBtn" title="Undo (Ctrl+Z)" disabled>↶ Undo</button>
+                <button class="btn" type="button" data-act="redo" id="redoBtn" title="Redo (Ctrl+Y)" disabled>↷ Redo</button>
+                <button class="btn" type="button" data-act="export" title="Download a JSON backup of your CV data">Export CV Data</button>
+                <button class="btn" type="button" data-act="import" title="Load a JSON backup">Import CV Data</button>
+                <button class="btn" type="button" data-act="collapse-all" title="Collapse every section to make reordering easier">Collapse all</button>
+                <button class="btn danger" type="button" data-act="clear-all" title="Erase everything saved in this browser">Clear All Data</button>
+                <input type="file" id="importFile" accept="application/json,.json" hidden>
+              </div>
+              <div class="banner" id="demoBanner" hidden role="note">
+                <strong>Demo data loaded.</strong> Everything here is fictional sample content. Replace it with your own details or choose New CV to start clean.
+              </div>
+            </section>
+
+            <details class="card quality" id="qualityCard" open>
+              <summary><span class="q-title">CV Completeness</span><span class="q-score" id="qScore">0%</span></summary>
+              <div class="meter" aria-hidden="true"><i id="qBar"></i></div>
+              <ul class="q-list" id="qList"></ul>
+              <p class="hint">This score only shows how complete your CV is. It does not guarantee ATS compatibility or interview results.</p>
+            </details>
+
+            <section class="card design" id="designCard" aria-labelledby="designTitle">
+              <h3 id="designTitle"><span aria-hidden="true">🎨</span> Template &amp; Style</h3>
+              <div class="tpl-chips" id="tplChips" role="group" aria-label="Choose a template"></div>
+
+              <label class="switch">
+                <input type="checkbox" id="atsToggle" data-path="meta.ats">
+                <span><strong>ATS-Friendly CV</strong><small>Single column, no photo, standard headings, plain black text.</small></span>
+              </label>
+              <p class="hint" id="atsHint" hidden>Download PDF creates an image-based PDF. For a PDF with selectable text (best for ATS software), use <strong>Print</strong> and choose “Save as PDF”.</p>
+
+              <div class="grid3">
+                <div class="fld"><label for="cPrimary">Primary color</label><input type="color" id="cPrimary" data-path="meta.primary"></div>
+                <div class="fld"><label for="cAccent">Accent color</label><input type="color" id="cAccent" data-path="meta.accent"></div>
+                <div class="fld"><label for="cText">Text color</label><input type="color" id="cText" data-path="meta.text"></div>
+              </div>
+              <div class="presets" id="presets" role="group" aria-label="Color presets"></div>
+
+              <div class="grid2">
+                <div class="fld">
+                  <label for="fontSel">Font</label>
+                  <select id="fontSel" data-path="meta.font">
+                    <option>Arial</option><option>Calibri</option><option>Inter</option>
+                    <option>Roboto</option><option>Georgia</option><option>Times New Roman</option>
+                  </select>
+                </div>
+                <div class="fld">
+                  <label for="fsRange">Font size <output id="fsOut" for="fsRange"></output></label>
+                  <input type="range" id="fsRange" min="11" max="16" step="0.5" data-path="meta.fontSize">
+                </div>
+              </div>
+            </section>
+
+            <!-- Sections are rendered here by script.js (drag to reorder) -->
+            <div id="editorDyn"></div>
+          </div>
+
+          <!-- ---------- LIVE PREVIEW ---------- -->
+          <aside class="preview-pane" id="previewPane" aria-label="Live CV preview">
+            <div class="preview-head">
+              <strong>Live Preview</strong>
+              <span id="pageCount" class="muted">1 page · A4</span>
+              <button class="btn sm" type="button" data-act="close-preview" id="closePreview">Close preview</button>
+            </div>
+            <div class="preview-scroll" id="previewScroll">
+              <div class="pages-frame" id="pagesFrame">
+                <div class="pages-scale" id="pagesScale">
+                  <div class="cv-pages" id="cvPages"></div>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TEMPLATES ============ -->
+    <section class="band" id="templates" aria-labelledby="tplTitle">
+      <div class="wrap">
+        <h2 id="tplTitle">Seven templates, one set of data</h2>
+        <p class="sub">Switch templates at any time. Nothing you typed changes, only the layout.</p>
+        <div class="tpl-gallery" id="tplGallery"></div>
+      </div>
+    </section>
+
+    <!-- ============ FEATURES ============ -->
+    <section class="wrap features" id="features" aria-labelledby="featTitle">
+      <h2 id="featTitle">Everything a CV editor should do</h2>
+      <dl class="feat-list">
+        <div><dt>Real A4 preview</dt><dd>Pages break between entries instead of through them, so what you see is what you download.</dd></div>
+        <div><dt>Photo cropping on your device</dt><dd>Upload a JPG or PNG, drag it into position, choose passport or circle. It is compressed locally and never uploaded.</dd></div>
+        <div><dt>Every section is yours to shape</dt><dd>Add, delete or drag sections into any order, and create custom sections like Awards or Volunteering.</dd></div>
+        <div><dt>Undo, redo, autosave</dt><dd>Ctrl+Z and Ctrl+Y work across edits. Your CV saves to this browser as you type.</dd></div>
+        <div><dt>ATS-friendly mode</dt><dd>One click switches to a plain single-column layout with standard headings.</dd></div>
+        <div><dt>Backup and restore</dt><dd>Export your CV as a JSON file and import it on any device.</dd></div>
+      </dl>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="band alt" id="about" aria-labelledby="aboutTitle">
+      <div class="wrap narrow">
+        <h2 id="aboutTitle">About CVForge</h2>
+        <p>CVForge is a free, open, browser-only CV builder. There is no server, no account and no tracking of your CV. Everything runs in HTML, CSS and vanilla JavaScript, and your data lives in your browser’s local storage until you clear it.</p>
+        <p>The goal is simple: make it easy to edit a CV and produce a clean, professional A4 document you can send with confidence.</p>
+      </div>
+    </section>
+
+    <!-- ============ HELP ============ -->
+    <section class="wrap narrow" id="help" aria-labelledby="helpTitle">
+      <h2 id="helpTitle">Help</h2>
+      <details><summary>How do I reorder sections?</summary><p>Drag the ⋮⋮ handle on a section card, or use the ↑ and ↓ buttons (best on phones and tablets). Personal information always stays at the top as the CV header.</p></details>
+      <details><summary>How do I reposition my photo?</summary><p>Upload a photo, then drag it inside the frame and use the zoom slider. With the keyboard, focus the photo frame and use the arrow keys.</p></details>
+      <details><summary>My CV is longer than one page. What happens?</summary><p>Extra A4 pages are added automatically. Entries are kept together where possible and headings are never left alone at the bottom of a page.</p></details>
+      <details><summary>Is the PDF text selectable?</summary><p>The Download PDF button renders each page as a high-resolution image, which keeps the design exact and links clickable. If you need real selectable text (for example for ATS software), use Print and choose “Save as PDF”.</p></details>
+      <details><summary>Where is my data stored?</summary><p>Only in this browser’s local storage. Use Export CV Data to keep a backup file, and Clear All Data to erase everything.</p></details>
+      <details><summary>Did I lose something?</summary><p>Try Undo (Ctrl+Z). Deleting a section or an item can be undone until you close the tab.</p></details>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap foot">
+      <span><strong>CVForge</strong> · Free CV builder</span>
+      <span>Your CV data and photo are processed locally in your browser. We do not require an account to create your CV.</span>
+    </div>
+  </footer>
+
+  <!-- Offscreen container used to measure blocks for page breaks -->
+  <div id="cvProbe" aria-hidden="true"></div>
+
+  <!-- ============ MODALS / TOASTS ============ -->
+  <div class="modal" id="modal" hidden role="dialog" aria-modal="true" aria-labelledby="mTitle" aria-describedby="mMsg">
+    <div class="modal-box">
+      <h3 id="mTitle"></h3>
+      <p id="mMsg"></p>
+      <div class="modal-actions">
+        <button class="btn" type="button" id="mCancel">Cancel</button>
+        <button class="btn danger-fill" type="button" id="mOk">Delete</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="busy" hidden role="alertdialog" aria-modal="true" aria-labelledby="busyMsg">
+    <div class="modal-box center"><div class="spinner" aria-hidden="true"></div><p id="busyMsg">Generating your PDF…</p></div>
+  </div>
+
+  <div class="toasts" id="toasts" role="status" aria-live="polite"></div>
+
+  <!-- =====================================================================
+       EXTERNAL LIBRARIES (PDF generation). Keep these two tags ABOVE script.js.
+       html2canvas renders each CV page, jsPDF assembles the A4 PDF.
+       To work offline, download both files into /assets/ and change the src paths.
+       ===================================================================== -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+</body>
+</html>

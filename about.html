@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ishwor Poudel | Full-Stack Developer & Future Computer Engineer</title>
+  <meta name="description" content="Personal portfolio of Ishwor Poudel, a technology-focused developer exploring full-stack development, artificial intelligence, 3D web experiences and computer engineering.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Ishwor Poudel | Full-Stack Developer & Future Computer Engineer">
+  <meta property="og:description" content="Personal portfolio of Ishwor Poudel — building modern web experiences, learning advanced software engineering, and exploring technology to solve real-world problems.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/developer.jpeg">
+
+  <!-- Favicon (inline SVG, no extra file needed) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230B0F17'/%3E%3Ctext x='50' y='68' font-size='60' text-anchor='middle' fill='%234FD1C5' font-family='monospace'%3E%3C/%3E%3C/text%3E%3C/svg%3E">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link rel="stylesheet" href="developer.css">
+</head>
+<body>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <header class="navbar" id="navbar">
+    <nav class="nav-container">
+      <a href="#home" class="logo" aria-label="Ishwor Poudel — home">
+        <span class="logo-bracket">&lt;</span>Ishwor<span class="logo-accent">.dev</span><span class="logo-bracket">/&gt;</span>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="nav-link active" data-section="home">Home</a></li>
+        <li><a href="about.html" class="nav-link" data-section="about">About</a></li>
+        <li><a href="#skills" class="nav-link" data-section="skills">Skills</a></li>
+        <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
+        <li><a href="#education" class="nav-link" data-section="education">Education</a></li>
+        <li><a href="#goals" class="nav-link" data-section="goals">Goals</a></li>
+        <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="#contact" class="btn btn-small btn-outline">Let's Talk</a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero" id="home">
+    <canvas id="particleCanvas" aria-hidden="true"></canvas>
+    <div class="hero-grid" aria-hidden="true"></div>
+    <div class="hero-glow hero-glow-1" aria-hidden="true"></div>
+    <div class="hero-glow hero-glow-2" aria-hidden="true"></div>
+
+    <div class="hero-container">
+      <div class="hero-content">
+        <p class="hero-eyebrow"><span class="status-dot"></span>Open to internships &amp; freelance work</p>
+
+        <h1 class="hero-name">Ishwor Poudel</h1>
+        <h2 class="hero-headline">
+          <span id="typedText"></span><span class="cursor" aria-hidden="true">|</span>
+        </h2>
+
+        <p class="hero-text">
+          Building modern web experiences, learning advanced software engineering,
+          and exploring technology to solve real-world problems.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#projects" class="btn btn-primary">Explore My Work</a>
+          <a href="#contact" class="btn btn-outline">Contact Me</a>
+          <a href="assets/resume.pdf" class="btn btn-ghost" download>
+            <i class="fa-solid fa-download" aria-hidden="true"></i> Download CV
+          </a>
+        </div>
+
+        <div class="hero-meta">
+          <div class="hero-meta-item"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Nepal</div>
+          <div class="hero-meta-item"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> Class 12 Completed</div>
+          <div class="hero-meta-item"><i class="fa-solid fa-code" aria-hidden="true"></i> Full-Stack Developer</div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="code-window">
+          <div class="code-window-bar">
+            <span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span>
+            <span class="code-window-title">about_me.py</span>
+          </div>
+          <pre class="code-window-body"><code><span class="c-kw">class</span> <span class="c-cls">Developer</span>:
+    <span class="c-kw">def</span> <span class="c-fn">__init__</span>(<span class="c-var">self</span>):
+        <span class="c-var">self</span>.name = <span class="c-str">"Ishwor Poudel"</span>
+        <span class="c-var">self</span>.role = <span class="c-str">"Full-Stack Developer"</span>
+        <span class="c-var">self</span>.based_in = <span class="c-str">"Nepal"</span>
+        <span class="c-var">self</span>.stack = [<span class="c-str">"Python"</span>, <span class="c-str">"JavaScript"</span>,
+                      <span class="c-str">"FastAPI"</span>, <span class="c-str">"Flask"</span>]
+        <span class="c-var">self</span>.learning = [<span class="c-str">"Three.js"</span>, <span class="c-str">"AI Agents"</span>,
+                        <span class="c-str">"Computer Vision"</span>]
+        <span class="c-var">self</span>.goal = <span class="c-str">"Build technology that</span>
+<span class="c-str">                solves real-world problems."</span>
+
+<span class="c-var">ishwor</span> = <span class="c-cls">Developer</span>()</code></pre>
+        </div>
+        <div class="profile-badge">
+          <div class="profile-img-wrap">
+            <img src="developer.jpeg" alt="Portrait of Ishwor Poudel" class="profile-img" onerror="this.parentElement.classList.add('img-fallback')">
+            <div class="profile-img-placeholder"><i class="fa-solid fa-user" aria-hidden="true"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a href="#about" class="scroll-indicator" aria-label="Scroll to About section">
+      <span>Scroll</span>
+      <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+    </a>
+  </section>
+
+  <!-- ===================== ABOUT ===================== -->
+  <section class="section" id="about">
+    <div class="container">
+      <p class="section-label">01 — About</p>
+      <h2 class="section-title">Who I Am</h2>
+
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p>
+            I'm Ishwor Poudel, a Computer Engineering-focused student and self-taught developer from Nepal.
+            I recently completed Class 12 with a GPA of approximately 3.6, and since then I've been deepening
+            my programming skills through consistent, hands-on practice rather than formal coursework alone.
+          </p>
+          <p>
+            My interest in technology started with curiosity about how software actually works — from the
+            logic behind a web page to the systems that power modern applications. That curiosity has grown
+            into a genuine focus: I spend my time writing code, building small projects, and studying the
+            fundamentals of full-stack development, databases, and artificial intelligence.
+          </p>
+          <p>
+            I'm currently working with Python, JavaScript, HTML, CSS and SQL, and exploring backend
+            frameworks like FastAPI and Flask alongside frontend fundamentals. I'm also experimenting with
+            Three.js to understand how 3D experiences are built on the web. My long-term goal is to study
+            Computer Engineering or Computer Science at a strong international university and grow into a
+            highly skilled software engineer who builds useful, real-world technology.
+          </p>
+
+          <div class="learning-box">
+            <h3><i class="fa-solid fa-bolt" aria-hidden="true"></i> Currently Learning</h3>
+            <ul class="learning-list">
+              <li><i class="fa-solid fa-circle-dot" aria-hidden="true"></i> Backend development with FastAPI &amp; Flask</li>
+              <li><i class="fa-solid fa-circle-dot" aria-hidden="true"></i> Database design with SQL, MySQL &amp; Supabase</li>
+              <li><i class="fa-solid fa-circle-dot" aria-hidden="true"></i> 3D web experiences with Three.js</li>
+              <li><i class="fa-solid fa-circle-dot" aria-hidden="true"></i> Foundations of AI &amp; computer vision</li>
+            </ul>
+          </div>
+        </div>
+
+        <aside class="info-card reveal">
+          <div class="info-card-header">
+            <div class="info-card-avatar"><i class="fa-solid fa-user-graduate" aria-hidden="true"></i></div>
+            <div>
+              <h3>Ishwor Poudel</h3>
+              <p>Full-Stack Developer / Aspiring Computer Engineer</p>
+            </div>
+          </div>
+          <dl class="info-list">
+            <div class="info-row"><dt>Location</dt><dd>Nepal</dd></div>
+            <div class="info-row"><dt>Education</dt><dd>Class 12 Completed</dd></div>
+            <div class="info-row"><dt>Focus</dt><dd>Software Development &amp; Computer Engineering</dd></div>
+            <div class="info-row"><dt>Interests</dt><dd>AI, Web Development, 3D Web, Programming</dd></div>
+            <div class="info-row"><dt>Status</dt><dd><span class="status-dot"></span> Open to opportunities</dd></div>
+          </dl>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SKILLS ===================== -->
+  <section class="section section-alt" id="skills">
+    <div class="container">
+      <p class="section-label">02 — Skills</p>
+      <h2 class="section-title">Technologies I Work With</h2>
+      <p class="section-subtitle">
+        An honest snapshot of where I currently stand — some areas I'm developing daily,
+        others I'm just beginning to explore.
+      </p>
+
+      <div class="skills-filter" id="skillsFilter" role="tablist" aria-label="Filter skills by category">
+        <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All</button>
+        <button class="filter-btn" data-filter="programming" role="tab" aria-selected="false">Programming</button>
+        <button class="filter-btn" data-filter="frontend" role="tab" aria-selected="false">Frontend</button>
+        <button class="filter-btn" data-filter="backend" role="tab" aria-selected="false">Backend</button>
+        <button class="filter-btn" data-filter="database" role="tab" aria-selected="false">Database</button>
+        <button class="filter-btn" data-filter="tools" role="tab" aria-selected="false">Tools</button>
+        <button class="filter-btn" data-filter="advanced" role="tab" aria-selected="false">Advanced Interests</button>
+      </div>
+
+      <div class="skills-grid" id="skillsGrid">
+        <!-- Programming -->
+        <div class="skill-card reveal" data-category="programming">
+          <div class="skill-head"><i class="fa-brands fa-python" aria-hidden="true"></i><h3>Python</h3></div>
+          <p>Core language for backend logic, scripting and learning AI fundamentals.</p>
+          <div class="skill-level" data-level="70"><span class="skill-level-fill"></span></div>
+          <span class="skill-tag">Developing</span>
+        </div>
+        <div class="skill-card reveal" data-category="programming">
+          <div class="skill-head"><i class="fa-brands fa-js" aria-hidden="true"></i><h3>JavaScript</h3></div>
+          <p>Used for interactive frontend behavior and learning full-stack logic.</p>
+          <div class="skill-level" data-level="65"><span class="skill-level-fill"></span></div>
+          <span class="skill-tag">Developing</span>
+        </div>
+
+        <!-- Frontend -->
+        <div class="skill-card reveal" data-category="frontend">
+          <div class="skill-head"><i class="fa-brands fa-html5" aria-hidden="true"></i><h3>HTML</h3></div>
+          <p>Semantic structure for accessible, well-organized web pages.</p>
+          <div class="skill-level" data-level="80"><span class="skill-level-fill"></span></div>
+          <span class="skill-tag">Working Knowledge</span>
+        </div>
+        <div class="skill-card reveal" data-category="frontend">
+          <div class="skill-head"><i class="fa-brands fa-css3-alt" aria-hidden="true"></i><h3>CSS</h3></div>
+          <p>Responsive layouts, animations and modern design systems.</p>
+          <div class="skill-level" data-level="75"><span class="skill-level-fill"></span></div>
+          <span class="skill-tag">Working Knowledge</span>
+        </div>
+        <div class="skill-card reveal" data-category="frontend">
+          <div class="skill-head"><i class="fa-brands fa-js" aria-hidden="true"></i><h3>JavaScript (Frontend)</h3></div>
+          <p>DOM manipulation, events and building interactive UI.</p>
+          <div class="skill-level" data-level="65"><span class="skill-level-fill"></span></div>
+          <span class="skill-tag">Developing</span>
+        </div>
+        <div class="skill-head-icon-only"></div>
+        <div class="skill-card reveal" data-category="frontend">
+          <div class="skill-head"><i class="fa-brands fa-bootstrap" aria-hidden="true"></i><h3>Bootstrap</h3></div>
+          <p>Rapid, responsive UI prototyping and layout structuring.</p>
+          <div class="skill-level" data-level="55"><span class="skill-level-fill"></span></div>
+          <span class="skill-tag">Familiar</span>
+        </div>
+
+        <!-- Backend -->
+        <div class="skill-card reveal" data-category="backend">
+          <div class="skill-head"><i class="fa-brands fa-python" aria-hidden="true"></i><h3>Python (Backend)</h3></div>
+          <p>Server-side logic, automation scripts and API development.</p>
+          <div class="skill-level" data-level="65"><span class="skill-level-fill"></span></div>
+          <span class="skill-tag">Developing</span>
+        </div>
+        <div class="skill-card reveal" data-category="backend">
+          <div class="skill-head"><i class="fa-solid fa-bolt" aria-hidden="true"></i><h3>FastAPI</h3></div>
+          <p>Building fast, modern REST APIs with Python.</p>
+          <div class="skill-level" data-level="45"><span class="skill-level-fill"></span></div>
+          <span class="skill-tag">Learning</span>
+        </div>
+        <div class="skill-card reveal" data-category="backend">
+          <div class="skill-head"><i class="fa-solid fa-flask" aria-hidden="true"></i><h3>Flask</h3></div>
+          <p>Lightweight Python framework for backend web applications.</p>
+          <div class="skill-level" data-level="45"><span class="skill-level-fill"></span></div>
+          <span class="skill-tag">Learning</span>
+        </div>
+        <div class="skill-card reveal" data-category="backend">
+          <div class="skill-head"><i class="fa-solid fa-diagram-project" aria-hidden="true"></i><h3>REST APIs</h3></div>
+          <p>Designing and consuming APIs that connect frontend and backend.</p>
+          <div class="skill-level" data-level="50"><span class="skill-level-fill"></span></div>
+          <span class="skill-tag">Learning</span>
+        </div>
+
+        <!-- Database -->
+        <div class="skill-card reveal" data-category="database">
+          <div class="skill-head"><i class="fa-solid fa-database" aria-hidden="true"></i><h3>SQL</h3></div>
+          <p>Writing queries, structuring tables and understanding relational data.</p>
+          <div class="skill-level" data-level="55"><span class="skill-level-fill"></span></div>
+          <span class="skill-tag">Developing</span>
+        </div>
+        <div class="skill-card reveal" data-category="database">
+          <div class="skill-head"><i class="fa-solid fa-server" aria-hidden="true"></i><h3>MySQL</h3></div>
+          <p>Relational database management for structured application data.</p>
+          <div class="skill-level" data-level="45"><span class="skill-level-fill"></span></div>
+          <span class="skill-tag">Learning</span>
+        </div>
+        <div class="skill-card reveal" data-category="database">
+          <div class="skill-head"><i class="fa-solid fa-bolt-lightning" aria-hidden="true"></i><h3>Supabase</h3></div>
+          <p>Exploring modern backend-as-a-service for auth and data.</p>
+          <div class="skill-level" data-level="35"><span class="skill-level-fill"></span></div>
+          <span class="skill-tag">Learning</span>
+        </div>
+
+        <!-- Tools -->
+        <div class="skill-card reveal" data-category="tools">
+          <div class="skill-head"><i class="fa-brands fa-git-alt" aria-hidden="true"></i><h3>Git</h3></div>
+          <p>Version control for tracking and managing project history.</p>
+          <div class="skill-level" data-level="60"><span class="skill-level-fill"></span></div>
+          <span class="skill-tag">Developing</span>
+        </div>
+        <div class="skill-card reveal" data-category="tools">
+          <div class="skill-head"><i class="fa-brands fa-github" aria-hidden="true"></i><h3>GitHub</h3></div>
+          <p>Hosting repositories and managing personal project workflow.</p>
+          <div class="skill-level" data-level="60"><span class="skill-level-fill"></span></div>
+          <span class="skill-tag">Developing</span>
+        </div>
+        <div class="skill-card reveal" data-category="tools">
+          <div class="skill-head"><i class="fa-solid fa-code" aria-hidden="true"></i><h3>VS Code</h3></div>
+          <p>Primary editor for daily development work.</p>
+          <div class="skill-level" data-level="80"><span class="skill-level-fill"></span></div>
+          <span class="skill-tag">Working Knowledge</span>
+        </div>
+
+        <!-- Advanced Interests -->
+        <div class="skill-card reveal" data-category="advanced">
+          <div class="skill-head"><i class="fa-solid fa-cube" aria-hidden="true"></i><h3>Three.js</h3></div>
+          <p>Exploring 3D graphics and interactive experiences on the web.</p>
+          <div class="skill-level" data-level="25"><span class="skill-level-fill"></span></div>
+          <span class="skill-tag">Learning</span>
+        </div>
+        <div class="skill-card reveal" data-category="advanced">
+          <div class="skill-head"><i class="fa-solid fa-brain" aria-hidden="true"></i><h3>Artificial Intelligence</h3></div>
+          <p>Studying the fundamentals of machine learning and AI systems.</p>
+          <div class="skill-level" data-level="30"><span class="skill-level-fill"></span></div>
+          <span class="skill-tag">Learning</span>
+        </div>
+        <div class="skill-card reveal" data-category="advanced">
+          <div class="skill-head"><i class="fa-solid fa-robot" aria-hidden="true"></i><h3>AI Agents</h3></div>
+          <p>Exploring how autonomous agents plan and complete tasks.</p>
+          <div class="skill-level" data-level="20"><span class="skill-level-fill"></span></div>
+          <span class="skill-tag">Learning</span>
+        </div>
+        <div class="skill-card reveal" data-category="advanced">
+          <div class="skill-head"><i class="fa-solid fa-eye" aria-hidden="true"></i><h3>Computer Vision</h3></div>
+          <p>Beginning to explore how machines interpret visual data.</p>
+          <div class="skill-level" data-level="15"><span class="skill-level-fill"></span></div>
+          <span class="skill-tag">Learning</span>
+        </div>
+        <div class="skill-card reveal" data-category="advanced">
+          <div class="skill-head"><i class="fa-solid fa-vr-cardboard" aria-hidden="true"></i><h3>3D Web Experiences</h3></div>
+          <p>Combining design and code to build immersive web interfaces.</p>
+          <div class="skill-level" data-level="20"><span class="skill-level-fill"></span></div>
+          <span class="skill-tag">Learning</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PROJECTS ===================== -->
+  <section class="section" id="projects">
+    <div class="container">
+      <p class="section-label">03 — Projects</p>
+      <h2 class="section-title">What I've Been Building</h2>
+      <p class="section-subtitle">
+        A mix of real, in-progress builds and conceptual explorations I'm using to learn
+        full-stack development, AI and 3D web experiences.
+      </p>
+
+      <div class="skills-filter" id="projectsFilter" role="tablist" aria-label="Filter projects by status">
+        <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All</button>
+        <button class="filter-btn" data-filter="live" role="tab" aria-selected="false">Live</button>
+        <button class="filter-btn" data-filter="progress" role="tab" aria-selected="false">In Progress</button>
+        <button class="filter-btn" data-filter="concept" role="tab" aria-selected="false">Concept</button>
+        <button class="filter-btn" data-filter="experimental" role="tab" aria-selected="false">Experimental</button>
+      </div>
+
+      <div class="projects-grid" id="projectsGrid">
+
+        <article class="project-card reveal" data-status="live">
+          <div class="project-image">
+            <i class="fa-solid fa-user-tie" aria-hidden="true"></i>
+            <span class="project-status status-live">Live</span>
+          </div>
+          <div class="project-body">
+            <h3>Developer Portfolio</h3>
+            <p>My personal professional profile website — built to present my skills, projects and goals to universities, recruiters and clients.</p>
+            <div class="project-tech">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="btn-link"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a>
+              <a href="#" class="btn-link"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Live Demo</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal" data-status="progress">
+          <div class="project-image">
+            <i class="fa-solid fa-gauge-high" aria-hidden="true"></i>
+            <span class="project-status status-progress">In Progress</span>
+          </div>
+          <div class="project-body">
+            <h3>KIPVIEWER</h3>
+            <p>A dashboard-style web application concept featuring navigation, a profile area, data views, history tracking and settings.</p>
+            <div class="project-tech">
+              <span>Python</span><span>Flask</span><span>SQL</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="btn-link"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a>
+              <a href="#" class="btn-link disabled"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> [Add live link]</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal" data-status="concept">
+          <div class="project-image">
+            <i class="fa-solid fa-shop" aria-hidden="true"></i>
+            <span class="project-status status-concept">Concept</span>
+          </div>
+          <div class="project-body">
+            <h3>Legendary Market</h3>
+            <p>A gaming-related marketplace concept exploring product listings, user interaction and marketplace-style UI patterns.</p>
+            <div class="project-tech">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="btn-link"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a>
+              <a href="#" class="btn-link disabled"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> [Add live link]</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal" data-status="experimental">
+          <div class="project-image">
+            <i class="fa-solid fa-robot" aria-hidden="true"></i>
+            <span class="project-status status-experimental">Experimental</span>
+          </div>
+          <div class="project-body">
+            <h3>AI / Kiki Agent</h3>
+            <p>An experimental AI assistant concept focused on learning automation and computer interaction. Early-stage exploration into agent behavior.</p>
+            <div class="project-tech">
+              <span>Python</span><span>AI Agents</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="btn-link"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a>
+              <a href="#" class="btn-link disabled"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> [Add live link]</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal" data-status="experimental">
+          <div class="project-image">
+            <i class="fa-solid fa-cube" aria-hidden="true"></i>
+            <span class="project-status status-experimental">Experimental</span>
+          </div>
+          <div class="project-body">
+            <h3>3D Interactive Projects</h3>
+            <p>A collection of experimental Three.js, particle-system and interactive web experiences used to learn 3D web development.</p>
+            <div class="project-tech">
+              <span>Three.js</span><span>JavaScript</span><span>WebGL</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="btn-link"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a>
+              <a href="#" class="btn-link disabled"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> [Add live link]</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal project-card-placeholder" data-status="concept">
+          <div class="project-image project-image-placeholder">
+            <i class="fa-solid fa-plus" aria-hidden="true"></i>
+          </div>
+          <div class="project-body">
+            <h3>[Add project name]</h3>
+            <p>[Add project description]</p>
+            <div class="project-tech">
+              <span>[Tech]</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="btn-link disabled"><i class="fa-brands fa-github" aria-hidden="true"></i> [Add link]</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== EDUCATION ===================== -->
+  <section class="section section-alt" id="education">
+    <div class="container">
+      <p class="section-label">04 — Education</p>
+      <h2 class="section-title">Academic Journey</h2>
+
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">Completed</span>
+            <h3>Class 12</h3>
+            <p>Completed higher secondary education with a GPA of approximately 3.6, building a strong foundation in analytical thinking and problem-solving.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-marker timeline-marker-active"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">In Progress</span>
+            <h3>Self-Directed Software Development</h3>
+            <p>Independently learning full-stack development, backend frameworks, databases and AI fundamentals through consistent, hands-on practice.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-marker timeline-marker-future"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">Goal</span>
+            <h3>Computer Engineering / Computer Science</h3>
+            <p>Aiming to study at a strong international university and build advanced knowledge in computer science, engineering and technology.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== GOALS ===================== -->
+  <section class="section" id="goals">
+    <div class="container">
+      <p class="section-label">05 — Goals</p>
+      <h2 class="section-title">Where I'm Headed</h2>
+
+      <div class="goals-columns">
+        <div class="goals-col reveal">
+          <h3><i class="fa-solid fa-flag" aria-hidden="true"></i> Short-Term Goals</h3>
+          <ul class="goals-list">
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Improve programming fundamentals</li>
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Build full-stack applications</li>
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Learn advanced backend development</li>
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Improve English communication</li>
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Build real-world projects</li>
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Learn AI and computer vision</li>
+          </ul>
+        </div>
+
+        <div class="goals-col reveal">
+          <h3><i class="fa-solid fa-rocket" aria-hidden="true"></i> Long-Term Goals</h3>
+          <ul class="goals-list">
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Become a strong software engineer</li>
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Study Computer Engineering / Computer Science</li>
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Build scalable technology products</li>
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Work internationally in the technology industry</li>
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Create technology that solves meaningful problems</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Developer Statistics -->
+      <div class="stats-bar">
+        <div class="stat-item reveal">
+          <span class="stat-number" data-count="3">0</span>
+          <span class="stat-label">Projects Built</span>
+        </div>
+        <div class="stat-item reveal">
+          <span class="stat-number" data-count="10">0</span>
+          <span class="stat-label">Technologies Learning</span>
+        </div>
+        <div class="stat-item reveal">
+          <span class="stat-number" data-count="1">0</span>
+          <span class="stat-label">Years Learning to Code</span>
+        </div>
+        <div class="stat-item reveal">
+          <span class="stat-number">Full-Stack</span>
+          <span class="stat-label">Current Focus</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT ===================== -->
+  <section class="section section-alt" id="contact">
+    <div class="container">
+      <p class="section-label">06 — Contact</p>
+      <h2 class="section-title">Let's Connect</h2>
+      <p class="section-subtitle">
+        Open to internships, freelance projects, collaboration and conversations about technology.
+        Reach out — I usually respond quickly.
+      </p>
+
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <a href="mailto:ishworpoudel1627@gmail.com" class="contact-item">
+            <div class="contact-icon"><i class="fa-solid fa-envelope" aria-hidden="true"></i></div>
+            <div><span>Email</span><p>ishworpoudel1627@gmail.com</p></div>
+          </a>
+          <a href="https://wa.me/9779765646345" class="contact-item" target="_blank" rel="noopener noreferrer">
+            <div class="contact-icon"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></div>
+            <div><span>WhatsApp</span><p>+977 9765646345</p></div>
+          </a>
+          <a href="https://github.com/ishworpoudel64" class="contact-item" target="_blank" rel="noopener noreferrer">
+            <div class="contact-icon"><i class="fa-brands fa-github" aria-hidden="true"></i></div>
+            <div><span>GitHub</span><p>github.com/ishworpoudel64</p></div>
+          </a>
+          <a href="https://linkedin.com/in/ishworpoudel" class="contact-item" target="_blank" rel="noopener noreferrer">
+            <div class="contact-icon"><i class="fa-brands fa-linkedin" aria-hidden="true"></i></div>
+            <div><span>LinkedIn</span><p>linkedin.com/in/ishworpoudel</p></div>
+          </a>
+          <div class="contact-item contact-item-static">
+            <div class="contact-icon"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></div>
+            <div><span>Location</span><p>Nepal</p></div>
+          </div>
+        </div>
+
+        <form class="contact-form reveal" id="contactForm" novalidate>
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your full name" required>
+            <span class="form-error" id="nameError"></span>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required>
+            <span class="form-error" id="emailError"></span>
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" placeholder="What's this about?" required>
+            <span class="form-error" id="subjectError"></span>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell me a bit about your project or idea..." required></textarea>
+            <span class="form-error" id="messageError"></span>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full" id="submitBtn">
+            <span>Send Message</span> <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+          </button>
+          <p class="form-note" id="formNote" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <a href="#home" class="logo">
+          <span class="logo-bracket">&lt;</span>Ishwor<span class="logo-accent">.dev</span><span class="logo-bracket">/&gt;</span>
+        </a>
+        <p>Building, learning and exploring the future of technology.</p>
+      </div>
+
+      <div class="footer-social">
+        <a href="https://github.com/ishworpoudel64" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
+        <a href="https://linkedin.com/in/ishworpoudel" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin" aria-hidden="true"></i></a>
+        <a href="https://wa.me/9779765646345" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
+        <a href="mailto:ishworpoudel1627@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Ishwor Poudel. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+  </button>
+
+  <script src="developer.js"></script>
+</body>
+</html>
