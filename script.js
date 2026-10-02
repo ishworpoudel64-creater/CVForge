@@ -247,7 +247,7 @@ function blankState() {
   };
 }
 function cleanItem(k, raw) {
-  const sc = SCHEMA[k], o = { id: /^[a-z0-9]{3,20}$/i.test(raw?.id) ? raw.id : uid() };
+  const sc = SCHEMA[k], o = { id: (typeof raw?.id === 'string' && /^[a-z0-9]{3,20}$/i.test(raw.id)) ? raw.id : uid() };
   sc.fields.forEach(f => {
     const v = raw?.[f.k];
     if (f.t === 'checkbox') o[f.k] = !!v;
